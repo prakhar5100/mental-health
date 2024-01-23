@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="connect.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+    <title>Connect</title>
+</head>
+<body>
+<div class="page">
+    <header id="navbar"> 
+        <a href="index.html"><img src="logo.png" id="logo"></a>
+        <ul>
+            <div class="navbar">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="assessment.html"> Mood Assessment </a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="exercise.html"> Exercises</a></li>
+                <li class="faq"><a href="resources.html"> Resources</a></li>
+            </div>
+        </ul>
+            <div class="sign">
+            <a href="login.html">Login</a>
+            </div>
+    </header>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.height = "80px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.height = "120px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        }
+        </script>
+
+    <main>
+        <div class="intro"> 
+            <h1> CONNECT</h1> 
+            <h2 class="reveal"> Connect with Psychologists</h2>
+        </div>
+        <div class="connect">
+            <h1 class="reveal" style="text-align: center; font-size: 3.5em; color: white; margin-bottom: 80px; text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.341);"> CONNECT & CHAT</h1>
+            <div class="doctor-cards reveal" id="doctor-cards">
+                <div class="doctor-card" >
+                    <div class="image-container">
+                        <img class="circular-crop" src="wepik-export-20240122184600wtCH.jpeg" id="doctorimage" alt="Dr. John Doe Image">
+                    </div>
+                    <div class="text-container">
+                        <hr class="separator1">
+                        <h2>Dr. John Doe</h2>
+                        <hr class="separator">
+                        <h3>Psychiatrist</h3>
+                        <hr class="separator">
+                        <p id="para">Dr. John Doe is a highly regarded psychiatrist known for his compassionate and insightful approach to mental health care.</p>
+                        <div class="button" onclick="showDoctorInfo('Dr. John Doe', 'Psychiatrist', '15 years of experience', 'wepik-export-20240122184600wtCH.jpeg')"> Chat </div>
+                    </div>
+                </div>
+    
+    
+                <div class="doctor-card" >
+                    <div class="image-container">
+                        <img class="circular-crop" src="wepik-export-202401222038014pcI.jpeg" alt="Dr. Michael Johnson Image">
+                    </div>
+                    <div class="text-container">
+                        <hr class="separator1">
+                        <h2>Dr. Michael Johnson</h2>
+                        <hr class="separator">
+                        <h3>Counseling Psychologist</h3>
+                        <hr class="separator">
+                        <p id="para">Dr. Michael Johnson is a counseling psychologist with a decade of experience, offering support and guidance to those in need.</p>
+                        <div class="button" onclick="showDoctorInfo('Dr. Michael Johnson', 'Counseling Psychologist', '10 years of experience', 'wepik-export-202401222038014pcI.jpeg')"> Chat</div>
+                    </div>
+                </div>
+    
+                <div class="doctor-card">
+                    <div class="image-container">
+                        <img class="circular-crop" src="wepik-export-20240122204415gTZg.jpeg" alt="Dr. Emily Davis Image">
+                    </div>
+                    <div class="text-container">
+                        <hr class="separator1">
+                        <h2>Dr. Emily Davis</h2>
+                        <hr class="separator">
+                        <h3>Child Psychologist</h3>
+                        <hr class="separator">
+                        <p id="para">Dr. Emily Davis specializes in child psychology, providing care and support to young minds with 8 years of dedicated experience.</p>
+                        <div class="button"  onclick="showDoctorInfo('Dr. Emily Davis', 'Child Psychologist', '8 years of experience','wepik-export-20240122204415gTZg.jpeg')"> Chat</div>
+                    </div>
+                </div>
+    
+                <div class="doctor-card" >
+                    <div class="image-container">
+                        <img class="circular-crop" src="wepik-export-20240122204011R3cP.jpeg" alt="Dr. Robert White Image">
+                    </div>
+                    <div class="text-container">
+                        <hr class="separator1">
+                        <h2>Dr. Robert White</h2>
+                        <hr class="separator">
+                        <h3>Forensic Psychologist</h3>
+                        <hr class="separator">
+                        <p id="para">Dr. Robert White, a forensic psychologist, brings 14 years of expertise in understanding the intersection of psychology and the legal system.</p>
+                        <div class="button" onclick="showDoctorInfo('Dr. Robert White', 'Forensic Psychologist', '14 years of experience','wepik-export-20240122204011R3cP.jpeg')"> Chat</div>
+                    </div>
+                </div>
+    
+                <div class="doctor-card">
+                    <div class="image-container">
+                        <img class="circular-crop" src="wepik-export-20240122204216ZAfr.jpeg" alt="Dr. Jane Smith Image">
+                    </div>
+                    <div class="text-container">
+                        <hr class="separator1">
+                        <h2>Dr. Jane Smith</h2>
+                        <hr class="separator">
+                        <h3>Clinical Psychologist</h3>
+                        <hr class="separator">
+                        <p id="para">Dr. Jane Smith specializes in clinical psychology with over 12 years of experience in helping individuals achieve mental well-being.</p>
+                        <div class="button"  onclick="showDoctorInfo('Dr. Jane Smith', 'Clinical Psychologist', '12 years of experience','wepik-export-20240122204216ZAfr.jpeg')"> Chat</div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup()">&times;</span>
+                    <img id="doctor-image" class="circular-crop" alt="Doctor Image">
+                    <h2 id="doctor-name"></h2>
+                    <p id="doctor-info"></p>
+                    <div class="chat-container">
+                        <div class="chat-box" id="chat-box"></div>
+                        <input type="text" id="user-input" placeholder="Type here..." onkeydown="sendMessage(event)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+    <script src="connect.js"></script>
+</div>
+</body>
+</html>

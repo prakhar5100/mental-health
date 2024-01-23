@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Home</title>
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+    
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+    
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop =  reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
+                }
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    
+        </script>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+    
+</head>
+<body>
+<div class="page">
+    <header id="navbar"> 
+        <a href="index.html"><img src="logo.png" id="logo"></a>
+        <ul>
+            <div class="navbar">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="assessment.html"> Mood Assessment </a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="exercise.html"> Exercises</a></li>
+                <li class="faq"><a href="resources.html"> Resources</a></li>
+            </div>
+        </ul>
+            <div class="sign">
+            <a href="login.html">Login</a>
+            </div>
+    </header>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.height = "80px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.height = "120px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        }
+        </script>
+    <main>
+        <div class="front">
+            <div class="head">
+                <h1> DID YOU KNOW ? </h1>
+                <h2 id="yewali">
+                    1 in 4 adults
+                </h2>
+                <h3 id="vowali"> suffer from a diagnosable mental disorder every year.</h3>
+                <div class="inner-head reveal">
+                <h2 id="areyou"> Do you? </h2>
+                <div class="dabba"> <h3> <a href="assessment.html"> Assess Yourself</a></h3></div>
+                </div>
+            </div>
+        </div>
+        <div class="front-2">
+            <div class="help reveal">
+                <h1 class="how">HOW WE HELP </h1>
+                <div class="platform"> <p>Our platform is designed to empower you in understanding and managing your mental well-being. Through personalized mood assessments, tailored suggestions, and direct connections with psychologists, we aim to guide you on a journey of self-discovery and provide tools for holistic mental health. Whether through recommended exercises or professional support, our website is dedicated to fostering a positive impact on your mental health journey.</p></div>
+            </div>
+        </div>
+        <div class="front-3">
+            <div class="ass reveal">
+                <h3> <a href="assessment.html"> Mood</a></h3>
+                <p> Engage in a transformative journey of self-discovery with our mood assessment feature on the website. Our mood test is designed to help you understand and reflect on your emotional well-being. By answering thought-provoking questions, you gain insights into your current emotional state, allowing for a personalized exploration of your mental health.</p>
+            </div>
+            <div class="resource reveal">
+
+                <h3><a href="resources.html">Resources</a> </h3>
+                <p> Discover a wealth of resources dedicated to nurturing your mental well-being on our website. Our platform offers a diverse range of articles, guides, and expert insights curated to empower you in your mental health journey. Whether you're seeking information about specific mental health conditions, coping strategies, or general well-being tips, our comprehensive resources are here to support you.  </p>
+            </div>
+            <div class="connect reveal">
+                <h3><a href="connect.html">Connect</a>  </h3>
+                <p> Connect with a supportive community and mental health professionals through our dedicated "Connect" feature on the website. Share your experiences, thoughts, and insights with others who may be on similar journeys. Engage in meaningful discussions, find encouragement, and build connections that contribute to a sense of belonging. Our platform also provides opportunities to connect with mental health experts, fostering a supportive environment for guidance and assistance. </p>
+            </div>
+            <div class="exercise reveal">
+                <h3><a href="exercises.html">Exercise</a>  </h3>
+                <p> Embark on a journey to enhance your mental well-being through our curated "Exercises" section on the website. Discover a variety of exercises, ranging from mindfulness practices to mood-boosting activities. Engage in activities designed to promote relaxation, stress relief, and emotional balance. Our goal is to empower you with practical tools to incorporate into your daily routine, contributing to a healthier and more resilient mindset.  </p>
+            </div>
+        </div>
+    <div style="background-image: url(https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); background-attachment: fixed; background-size: cover; margin-top: -20px; padding: 20px; height: 100vh; display: flex; align-items: center; flex-direction: column; justify-content: center;">
+        <div class="container reveal">
+            <div class="left-section">
+                <p>Your mental health is a priority. Your happiness is an essential. Your self-care is a necessity.</p>
+                <p>It's okay not to be okay, as long as you are not giving up.</p>
+                <p>Your mental health is more important than the test, the interview, the lunch date, the meeting, the family dinner, and the grocery-run. Take care of yourself.</p>
+            </div>
+            <div class="right-section">
+                <h2>Contact Us</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <div class="footnote">
+        This project is made by Nidhi Sharma, Prachi Singh, Mudassir Imam, and Prakhar Pratap Singh.
+      </div>
+    </main>
+</div>
+</body>
+</html>

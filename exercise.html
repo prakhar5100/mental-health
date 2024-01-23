@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <link rel="stylesheet" href="exercise.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  </head>
+<body>
+<div class="page">
+    <header id="navbar"> 
+        <a href="index.html"><img src="logo.png" id="logo"></a>
+        <ul>
+            <div class="navbar">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="assessment.html"> Mood Assessment </a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="exercise.html"> Exercises</a></li>
+                <li class="faq"><a href="resources.html"> Resources</a></li>
+            </div>
+        </ul>
+            <div class="sign">
+            <a href="login.html">Login</a>
+            </div>
+    </header>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.height = "80px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.height = "120px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        }
+        </script>
+
+    <main>
+        <div class="intro"> 
+            <h1> EXERCISES</h1> 
+            <h2 class="reveal"> Calm your mind</h2>
+        </div>
+        <div class="breath">
+            <h1 class="reveal"> BREATHING</h1>
+            <p class="reveal">"Breathing in, I calm body and mind. Breathing out, I smile. Dwelling in the present moment I know this is the only moment."<br> - Thich Nhat Hanh</p>
+            <div class="time-breath" onclick="openModal()">
+                <p> Start Relaxer</p>
+
+            </div>
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                  <audio id="backgroundMusic" loop>
+                    <source src="Calm-and-Peaceful(chosic.com).mp3" type="audio/mp3" />
+                    Your browser does not support the audio element.
+                  </audio>
+                  <div class="container" id="container">
+                    <div class="circle"></div>
+                    <p id="text" style="font-size: 1.3em;"></p>
+                    <div class="pointer-container">
+                      <span class="pointer"></span>
+                    </div>
+                    <div class="gradient-circle"></div>
+                  </div>
+                  <div class="botton" onclick="closeModal()">
+                        <p style="font-size: 1em;"> End Session </p>
+                  </div>
+          
+                  <script>
+                    const container = document.getElementById('container');
+                    const backgroundMusic = document.getElementById('backgroundMusic');
+                    const text = document.getElementById('text');
+          
+                    const totalTime = 7500;
+                    const breatheTime = (totalTime / 5) * 2;
+                    const holdTime = totalTime / 5;
+          
+                    breathAnimation();
+          
+                    function breathAnimation() {
+                      text.innerText = 'Breathe In!';
+                      container.className = 'container grow';
+          
+                      setTimeout(() => {
+                        text.innerText = 'Hold';
+          
+                        setTimeout(() => {
+                          text.innerText = 'Breathe Out!';
+                          container.className = 'container shrink';
+                        }, holdTime);
+                      }, breatheTime);
+                    }
+          
+                    setInterval(breathAnimation, totalTime);
+          
+                    function openModal() {
+                      document.body.classList.add('modal-open');
+                      document.getElementById('modal').style.display = 'flex';
+                      backgroundMusic.play();
+                    }
+          
+                    function closeModal() {
+                      document.body.classList.remove('modal-open');
+                      document.getElementById('modal').style.display = 'none';
+                      backgroundMusic.pause();
+                    }
+                  </script>
+                </div>
+              </div>
+          
+        </div>
+    <script src="exercise.js"></script>
+    </main>
+</div>
+</body>
+</html>
