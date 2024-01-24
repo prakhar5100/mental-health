@@ -123,7 +123,7 @@ main {
 }
 
 .article {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(https://images.pexels.com/photos/1428626/pexels-photo-1428626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(https://images.pexels.com/photos/4792085/pexels-photo-4792085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-attachment: fixed;
     background-size: cover;
     height: 75vh;
