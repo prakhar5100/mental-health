@@ -125,8 +125,8 @@ main {
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0)), url(https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg);
     background-attachment: fixed;
     background-size: cover;
-/*     height: 60vw; 
-    max-height: 55vw; */
+/*     height: 60vw; */
+    max-height: 55vw; 
     padding: 70px;
     width: 100vw;
     filter: saturate(1.4);
