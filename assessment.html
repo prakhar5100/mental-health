@@ -7,8 +7,217 @@
     <title>Assessment</title>
 </head>
 <body>
-    <h1> UNDER CONSTRUCTION </h1>
-    <h2> This page will be available soon.</h2>
-    <a href="index.html"> Go to Home Page </a>
+<div class="page">
+    <header id="navbar"> 
+        <a href="index.html"><img src="logo.png" id="logo"></a>
+        <ul>
+            <div class="navbar">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="assessment.html"> Mood Assessment </a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="exercise.html"> Exercises</a></li>
+                <li class="faq"><a href="resources.html"> Resources</a></li>
+            </div>
+        </ul>
+            <div class="sign">
+            <a href="login.html">Login</a>
+            </div>
+    </header>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.height = "80px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.height = "120px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        }
+    </script>
+    <main>
+        <div class="intro">
+            <h1> ASSESSMENT </h1>
+            <h2 class="reveal"> Take a mental test.</h2>    
+        </div>
+        <div class="quiz">
+            <h1 class="reveal">3 Minute Depression Test</h1>
+            <div class="accordion reveal">
+                <div class="accordion-item">
+                  <div class="accordion-title">Who is this for? <div class="allow"><i class="fa-solid fa-chevron-down arrow"></i></div>
+                  </div>
+                  <div class="accordion-content">
+                    <div class="line"></div>
+                    <p>Below is a list of 10 questions designed to help you determine if you might be experiencing depression. The questions relate to life experiences common among people who have depression. Please read each question carefully, and indicate how often you have experienced the same or similar challenges in the past few weeks.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-title">How Accurate Is It? <div class="allow" style="left: 375px;"><i class="fa-solid fa-chevron-down arrow"></i></div> </div>
+                  <div class="accordion-content">
+                    <div class="line"></div>
+                    <p>This quiz is NOT a diagnostic tool. Mental health disorders can only be diagnosed by a licensed mental health provider or doctor. However, it can provide a basic assessment of your condition</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-title">Learn More About Depression <div class="allow" style="left: 310px;"><i class="fa-solid fa-chevron-down arrow"></i></div></div>
+                  <div class="accordion-content">
+                    <div class="line"></div>
+                    <p>Depression can make you feel alone but you have lots of company. Major depressive disorder (MDD), the clinical term for depression, is one of the most common mental health conditions, affecting an estimated 350 million people in all age groups. You should know that depression isn’t the same as being sad. It’s normal to feel blue or unmotivated from time to time, but depression is more constant. And, it has a real, biological basis.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="starting" onclick="startQuiz()"> Start the Quiz</div>
+
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <p>In the past few weeks, how often have you experienced:</p>
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="question"></div>
+                <div id="options" style="margin: 15px;"></div>
+                <div class="buttons">
+                    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+                    <button id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+                    <button id="restartBtn" onclick="restartQuiz()" style="display: none;">Restart Quiz</button>    
+                    
+                </div>
+                <div id="result">
+                </div>
+              </div>
+            </div>
+            
+        </div>
+    </main>
+</div>
+<script src="assessment.js"></script>
+<script src="https://kit.fontawesome.com/557be6340a.js" crossorigin="anonymous"></script>
+<script>
+  var questions = [
+    {
+        question: '1. Little interest or pleasure in doing things.',
+        options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+        question: '2. Feeling down, depressed, or hopeless',
+        options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+          question: '3. Trouble falling or staying asleep, or sleeping too much',
+          options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+          question: '4. Feeling tired or having little energy',
+          options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+          question: '5. Poor appetite or overeating',
+          options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+          question: '6. Feeling bad about yourself - or that you are a failure or have let yourself or your family down',
+          options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+            question: '7. Trouble concentrating on things, such as reading the newspaper or watching television',
+            options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+            question: '8. Moving or speaking so slowly that other people could have noticed',
+            options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+      },
+      {
+          question: '9. Thoughts that you would be better off dead, or of hurting yourself',
+          options: ['Not at all', 'Several days', 'More than half of the days', 'Nearly every day']
+    },
+    {
+          question: "10. If you've had any days with issues above, how difficult have these problems made it for you at work, home, school, or with other people?",
+          options: ['Not difficult at all', 'Somewhat difficult', 'Very difficult', 'Extremely difficult']
+    }
+    ];
+    
+      var currentQuestion = 0;
+      var score = 0;
+    
+      function startQuiz() {
+        document.getElementById("myModal").style.display = "block";
+        showQuestion();
+      }
+    
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+    
+      function showQuestion() {
+        var question = questions[currentQuestion];
+        document.getElementById("question").innerHTML = question.question;
+        var optionsHtml = "";
+        question.options.forEach(function(option, index) {
+          optionsHtml += "<input type='radio' name='option' value='" + index + "'>" + option + "<br>";
+        });
+        document.getElementById("options").innerHTML = optionsHtml;
+        document.getElementById("submitBtn").style.display = "none";
+      }
+    
+      function nextQuestion() {
+        var selectedOption = document.querySelector('input[name="option"]:checked');
+        if (selectedOption) {
+          score += parseInt(selectedOption.value) + 1;
+          currentQuestion++;
+          if (currentQuestion < questions.length ) {
+            showQuestion();
+          } else {
+            document.getElementById("nextBtn").style.display = "none";
+            document.getElementById("submitBtn").style.display = "flex";
+          }
+        } else {
+          alert("Please select an option.");
+        }
+      }
+    
+      function submitQuiz() {
+        var resultDiv = document.getElementById("result");
+        if (score <= 20) {
+          resultDiv.innerHTML = `
+          <div id="lowdep">
+          <h2> Your Results </h2>
+          <h1>Depression Unlikely </h1>
+          <P>Your answers suggest you may not be suffering from depression. Still if you feel something isn't quite right, we recommend you schedule an appointment with your doctor. If you need help finding a mental health professional, we suggest that you reach out to emergency mental health resources.</P>
+      </div>
+          `;
+        } else if (score >= 21 && score < 30) {
+          resultDiv.innerHTML = `
+          <div id="lowdep">
+          <h2> Your Results </h2>
+          <h1>Moderate Depression </h1>
+          <P>Your answers suggest you are suffering from moderate depression. Consider watchful waiting, and testing again normally within two weeks. We additionally suggest it would be prudent to start a conversation with your doctor. If you need help finding a mental health professional we suggest that you reach out to http://www.nami.org/Find-Support.</P>
+      </div>
+          `;
+        } else {
+          resultDiv.innerHTML = `
+          <div id="lowdep">
+          <h2> Your Results </h2>
+          <h1>Severe Depression </h1>
+          <P>Your answers suggest you are suffering from severe depression. It is important that you schedule an appointment with your doctor or a mental health worker now. If you need help finding a mental health professional we suggest that you reach out to http://www.nami.org/Find-Support.</P>
+      </div>
+          `
+          ;
+        }
+        document.getElementById("nextBtn").style.display = "none";
+        document.getElementById("submitBtn").style.display = "none";
+        document.getElementById("restartBtn").style.display = "flex";
+        document.getElementById("result").style.display = "block";
+        document.getElementById("result").style.marginTop = "20px";
+      }
+
+      function restartQuiz() {
+        currentQuestion = 0;
+        score = 0;
+        document.getElementById("nextBtn").style.display = "flex";
+        document.getElementById("submitBtn").style.display = "none";
+        document.getElementById("restartBtn").style.display = "none";
+        document.getElementById("result").style.display = "none";
+        showQuestion();
+      }
+</script>
 </body>
 </html>
