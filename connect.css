@@ -229,7 +229,7 @@ ul li a:hover{
 }
 
 .connect .user-message {
-    background-color: #4CAF50; /* Green color for user messages */
+    background-color: #4CAF50; 
     color: #fff;
     padding: 10px;
     margin-bottom: 5px;
@@ -240,7 +240,7 @@ ul li a:hover{
 }
 
 .connect .bot-message {
-    background-color: #2196F3; /* Blue color for bot messages */
+    background-color: #2196F3; 
     color: #fff;
     padding: 10px;
     margin-bottom: 5px;
@@ -254,7 +254,7 @@ ul li a:hover{
     max-height: 220px;
     overflow: hidden;
     border-radius: 10px;
-    object-fit: cover; /* Keeps the image aspect ratio and fills the container */
+    object-fit: cover; 
 }
 
 .connect .image-container {
@@ -373,4 +373,42 @@ ul li a:hover{
 .reveal.active{
     transform: translateY(0px);
     opacity: 1;
+}
+
+.chatbot {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url(https://plus.unsplash.com/premium_photo-1682308298447-a152cf5f0e98?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    height: 85vh;
+    background-position: center center;
+    padding: 60px;
+}
+
+.chatbot h1{
+    text-align: center;
+    color: white;
+    font-size: 3.5em;
+    letter-spacing: 2px;
+    text-shadow: black;
+}
+
+.chatbot p {
+    color: white;
+    font-size: 1.4em;
+    line-height: 200% ;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(17, 17, 17, 0.518);
+    border-radius: 10px;
+    width: 50vw;
+}
+
+.bas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bot {
+    margin-top: 23px;
+    width: 30%;
+    height: 30vw;
 }
