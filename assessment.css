@@ -126,7 +126,7 @@ main {
     background-attachment: fixed;
     background-size: cover;
     /* height: 40vw; */
-    max-height: 50vw;
+    max-height: 55vw;
     padding: 70px;
     filter: saturate(1.4);
     display: flex;
