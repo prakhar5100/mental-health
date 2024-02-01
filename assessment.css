@@ -101,7 +101,7 @@ main {
 .intro {
     background-image:linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.7)), url(https://images.pexels.com/photos/1659437/pexels-photo-1659437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-size: cover;
-    height: 100vh;
+    height: 125vh;
     width: 100vw;
     background-attachment: fixed;
     display: flex;
@@ -125,10 +125,9 @@ main {
     background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0)), url(https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg);
     background-attachment: fixed;
     background-size: cover;
-/*     height: 60vw; */
-    max-height: 55vw; 
+    /* height: 40vw; */
+    max-height: 50vw;
     padding: 70px;
-    width: 100vw;
     filter: saturate(1.4);
     display: flex;
     flex-direction: column;
