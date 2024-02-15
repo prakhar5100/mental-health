@@ -58,7 +58,7 @@
                         <h3>Psychiatrist</h3>
                         <hr class="separator">
                         <p id="para">Dr. John Doe is a highly regarded psychiatrist known for his compassionate and insightful approach to mental health care.</p>
-                        <div class="button" onclick="showDoctorInfo('Dr. John Doe', 'Psychiatrist', '15 years of experience', 'wepik-export-20240122184600wtCH.jpeg')"> Chat </div>
+                        <div class="button"  onclick="openModal1()"> Book Appointment</div>
                     </div>
                 </div>
     
@@ -74,7 +74,7 @@
                         <h3>Counseling Psychologist</h3>
                         <hr class="separator">
                         <p id="para">Dr. Michael Johnson is a counseling psychologist with a decade of experience, offering support and guidance to those in need.</p>
-                        <div class="button" onclick="showDoctorInfo('Dr. Michael Johnson', 'Counseling Psychologist', '10 years of experience', 'wepik-export-202401222038014pcI.jpeg')"> Chat</div>
+                        <div class="button"  onclick="openModal1()"> Book Appointment</div>
                     </div>
                 </div>
     
@@ -89,7 +89,7 @@
                         <h3>Child Psychologist</h3>
                         <hr class="separator">
                         <p id="para">Dr. Emily Davis specializes in child psychology, providing care and support to young minds with 8 years of dedicated experience.</p>
-                        <div class="button"  onclick="showDoctorInfo('Dr. Emily Davis', 'Child Psychologist', '8 years of experience','wepik-export-20240122204415gTZg.jpeg')"> Chat</div>
+                        <div class="button"  onclick="openModal1()"> Book Appointment</div>
                     </div>
                 </div>
     
@@ -104,7 +104,7 @@
                         <h3>Forensic Psychologist</h3>
                         <hr class="separator">
                         <p id="para">Dr. Robert White, a forensic psychologist, brings 14 years of expertise in understanding the intersection of psychology and the legal system.</p>
-                        <div class="button" onclick="showDoctorInfo('Dr. Robert White', 'Forensic Psychologist', '14 years of experience','wepik-export-20240122204011R3cP.jpeg')"> Chat</div>
+                        <div class="button"  onclick="openModal1()"> Book Appointment</div>
                     </div>
                 </div>
     
@@ -119,7 +119,8 @@
                         <h3>Clinical Psychologist</h3>
                         <hr class="separator">
                         <p id="para">Dr. Jane Smith specializes in clinical psychology with over 12 years of experience in helping individuals achieve mental well-being.</p>
-                        <div class="button"  onclick="showDoctorInfo('Dr. Jane Smith', 'Clinical Psychologist', '12 years of experience','wepik-export-20240122204216ZAfr.jpeg')"> Chat</div>
+                        <div class="button"  onclick="openModal1()"> Book Appointment</div>
+
                     </div>
                 </div>
     
@@ -128,15 +129,48 @@
             <div class="popup" id="popup">
                 <div class="popup-content">
                     <span class="close-btn" onclick="closePopup()">&times;</span>
-                    <img id="doctor-image" class="circular-crop" alt="Doctor Image">
-                    <h2 id="doctor-name"></h2>
-                    <p id="doctor-info"></p>
+                    <h2 id="doctor-name" style="font-size: 1.5em;"></h2>
                     <div class="chat-container">
                         <div class="chat-box" id="chat-box"></div>
                         <input type="text" id="user-input" placeholder="Type here..." onkeydown="sendMessage(event)">
                     </div>
                 </div>
             </div>
+
+            <div id="myModal1" class="modal1">
+                <div class="modal-content1">
+                  <span class="close-btn1" onclick="closeModal1()">&times;</span>
+                  <h2 style="padding-bottom: 20px;">Book an Appointment</h2>
+              
+                  <form id="bookingForm">
+                    <div class="form-group well">
+                      <label for="name">Your Name:</label>
+                      <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group well">
+                      <label for="email">Your Email:</label>
+                      <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group well">
+                      <label for="date">Preferred Date:</label>
+                      <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group well">
+                      <label for="message">Additional Message:</label>
+                      <textarea id="message" name="message"></textarea>
+                    </div>
+                    <div class="form-group well">
+                      <input type="submit" value="Book Appointment">
+                    </div>
+                  </form>
+              
+                  <p>For a free trial chat, click the button below:</p>
+                  <button class="free-trial-btn" onclick="showDoctorInfo('Dr. Jane Smith', 'Clinical Psychologist', '12 years of experience','wepik-export-20240122204216ZAfr.jpeg')">Free Trial Chat</button>
+                </div>
+              </div>
+              <div id="modalOverlay1" class="modal-overlay1" onclick="closeModal1()"></div>
+              <div id="modalOverlay2" class="modal-overlay2" onclick="closeModal1()"></div>
+
         </div>
     
         <div class="chatbot">

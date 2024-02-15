@@ -1,13 +1,9 @@
 // script.js
 function showDoctorInfo(name, specialization, experience, imageSrc) {
     const popup = document.getElementById('popup');
-    const doctorImage = document.getElementById('doctor-image');
     const doctorName = document.getElementById('doctor-name');
-    const doctorInfo = document.getElementById('doctor-info');
 
-    doctorName.textContent = `Chat with ${name}`;
-    doctorInfo.innerHTML = `<strong>Specialization</strong> : ${specialization}<br><strong>Experience</strong> : ${experience}`;
-    doctorImage.src = imageSrc;
+    doctorName.textContent = `Chat with your doctor`;
 
     popup.style.display = 'flex';
 }
@@ -63,3 +59,18 @@ function reveal(){
     }
 }
 
+function openModal1() {
+    document.getElementById('myModal1').style.display = 'block';
+    document.getElementById('modalOverlay1').style.display = 'block';
+  }
+
+  function closeModal1() {
+    document.getElementById('myModal1').style.display = 'none';
+    document.getElementById('modalOverlay1').style.display = 'none';
+  }
+
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Booking submitted! We will contact you soon.');
+    closeModal1();
+  });
